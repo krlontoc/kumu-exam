@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "23a80545-c943-474f-b7f9-35d25522da78",
+		"name": "Kumu Exam - Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Bearer Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:1007/auth/token",
+					"host": [
+						"localhost"
+					],
+					"port": "1007",
+					"path": [
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Git Users Info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTg4NDQzMTgsInZsZCI6dHJ1ZX0.XYWYv_Di-Na4DSg7bdX88nFvsQ6s9An40AqDJVQ6oqk39HdJHasOPA5goh-UNl37l9qTrfhmol8EoBYfHToDV-461ronPq6EJqXZGQpNfoQ4rbRGz2D3dsc0P_vT1lBhI_AyR5dSC_ts-FKr7iJ7K4vODuVO4_CXs4LYxeH0U-ijHy_snUMBXQFSdMAWho2s0eBt93m51HQ01bUrSSaql6DJRZo4depXIgbs3-hEuuHHh141yW4QA_KaNc9rzmCt0T8NXQOophAEAIJEE5X8rFOKe9H4eUGMG36rwqwmyGRo2JwaOWDr9NFLkh7a7LI3kjx0zIBfWkoPQvdn3qYYFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"users\": [\r\n        \"some-user-1\",\r\n        \"krlontoc\",\r\n        \"some-user-2\",\r\n        \"\",\r\n        \"krlontoc\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:1007/api/v1/git-users",
+					"host": [
+						"localhost"
+					],
+					"port": "1007",
+					"path": [
+						"api",
+						"v1",
+						"git-users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
